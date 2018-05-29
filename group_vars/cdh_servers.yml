@@ -3,7 +3,7 @@
 db_hostname: "{{ hostvars[groups['db_server'][0]]['inventory_hostname'] }}"
 scm_hostname: "{{ hostvars[groups['scm_server'][0]]['inventory_hostname'] }}"
 
-cdh_version: 5.8.3
+cdh_version: "{{ scm_products[0].version.split('-')[0] }}"
 cluster_display_name: cluster_1
 
 cdh_services:
@@ -31,3 +31,7 @@ cdh_services:
     yarn_nodemanager_log_dirs: /var/log/nm
 
   - type: zookeeper
+
+  - type: kafka
+
+  - type: spark2

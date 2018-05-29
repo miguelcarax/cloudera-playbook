@@ -1,6 +1,8 @@
 *.py[cod]
 *.so
+*.swp
 *.iml
+*.json
 .idea/
 .DS_Store
 site.retry
